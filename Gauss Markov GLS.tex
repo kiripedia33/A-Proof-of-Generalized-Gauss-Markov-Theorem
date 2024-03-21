@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsthm}
+
+\newtheorem*{Theorem}{Generalized Gauss-Markov Theorem}
+\newtheorem*{Assumption}{Assumption}
+\begin{document}
+\begin{Theorem}
+  \begin{Assumption}
+  	~\\
+  	Y=X$\beta$+e\\
+  	$where$ E$\lbrack$e$\mid$X$\rbrack$=0 \quad 
+  	var$\lbrack$e$\mid$X$\rbrack$=$\Omega$\quad
+  	E$\lbrack$$Y^2$$\mid$X$\rbrack$ \textless$\infty$\quad
+  	E$\lbrack$$X^{2}$$\rbrack$$<$$\infty$\\
+  	$X^{T}X$ $is$ $invertible$
+  \end{Assumption}
+  ~\\
+  Under the given assumption and $\Omega$$>$0, let $\tilde{\beta}$ be a linear unbiased estimator of $\beta$ then we have\\ 
+  \begin{center}$ var\lbrack\tilde{\beta}\mid X\rbrack\geq(X^{T}\Omega^{-1}X)^{-1}$\end{center}
+\end{Theorem}
+\linespread{1.5}
+\begin{proof}
+	~\\
+	let $\tilde{\beta}$=CY where C is a function of X. \\
+	E[$\tilde{\beta}$$\mid$X]=E[CY$\mid$X]\\
+	=E[C(X$\beta$+e)$\mid$X]\\
+	=E[CX$\beta$+Ce$\mid$X]\\
+	=CX$\beta$\\
+	=$\beta$\\
+	Thus CX=I\\
+	var[$\tilde{\beta}$$\mid$X]=var[$(Ce)$$\mid$X]=$C$var[e$\mid$X]$C^{T}$=$C$$\Omega$$C^{T}$\\
+	Without loss of generality, let $C$=$(X^{T}\Omega^{-1}X)^{-1}X^{T}\Omega^{-1}+D$\\
+	CX=I $\Rightarrow$ DX=0\\
+	Note that $\Omega$ is positive semi-definite and symmetry,\\
+	Thus,\\ var[$\tilde{\beta}$$\mid$X]=$C$$\Omega$$C^{T}$\\
+	=$((X^{T}\Omega^{-1}X)^{-1}X^{T}\Omega^{-1}+D)\Omega(D^{T}+(\Omega^{-1})^{T}X(X^{T}\Omega^{-1}X)^{-1})$\\
+	=$(X^{T}\Omega^{-1}X)^{-1}X^{T}\Omega^{-1}X(X^{T}\Omega^{-1}X)^{-1}+D \Omega D^{T}$\\
+	=$(X^{T}\Omega^{-1}X)^{-1}+D \Omega D^{T}$
+	$\geq$$(X^{T}\Omega^{-1}X)^{-1}$
+\end{proof}
+\end{document}
